@@ -1,14 +1,13 @@
 -gallery_images = ["amigos.jpg","alv.jpg","fuck.jpg","fuck2.jpg","helvetica.jpg","merch.jpg", "noposwow.jpg"]
-!!!5
 %html{class:"no-js", lang:""}
   %head
     %meta{charset:"utf-8"}
     %meta{:"http-equiv" => "x-ua-compatible", content:"ie=edge"}
     %title Money League
-    %meta{name:"description", content:"Come rico y barato en el mejor rastaurante de la ciudad, servicio de primera. Los mejores tacos de la ciudad."}
+    %meta{name:"description", content:"Money League 🔥. 16 equipos, un ganador, $20,000 en efectivo ¿Estás listo? By. AMIGOS COOL"}
     %meta{content:"#{gallery_images.length}", :"data-name" => "image_counter"}
     %meta{name:"viewport", content:"width=device-width, initial-scale=1"}
-    %link{rel:"apple-touch-icon", href:"apple-touch-icon.png"}
+    %link{rel:"icon", href:"imgs/icons/favicon.ico"}
     %link{rel:"stylesheet", href:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"}
     %link{rel:"stylesheet", href:"css/normalize.css"}
     %link{rel:"stylesheet", href:"css/main.css"}
@@ -43,7 +42,7 @@
       
       .absolute.medium.red.large-padding.up--2#description
         .row
-          .col-xs-8.col-sm-6.moto.white-text El futbol en México cambia para siempre
+          .col-xs-8.col-sm-6.moto.white-text.main-font El fútbol en México cambia para siempre
           .fade.col-sm-6.navigation.col-xs-4
             %nav.small.text-right.main-nav#responsive-nav
               %span.glyphicon.glyphicon-menu-hamburger.menu.white-text.subtitle
@@ -62,6 +61,10 @@
                 .col-xs-12
                   .box
                     %h3.main-font.white-text.subtitle= i[:title]
+    
+    %div.merch
+      %strong.big.main-font.center ¡Checa la nueva merch!
+      %p.montse-font.center Sabemos que te va a encantar
     #gallery
       .inner
         -gallery_images.each do |image|
@@ -69,18 +72,18 @@
     .container
       .card.white.relative.blue-text.text-center
         %h2.medium.slim.montse-font
-          Si eres bueno jugando futbol es hora de que se te pague por eso
+          Si eres bueno jugando fútbol es hora de que se te pague por eso
           %br
           %br
           %strong.main-font.big Somos 
-          %strong.big.main-font AMIGOSCOOL 
+          %strong.big.main-font AMIGOS COOL 
           
           %h2.medium.slim.montse-font
-            4 partidos y 8 goles es lo que te separa de $20,000
+            4 partidos y 8 goles es lo que te separa de $20,000 en efectivo
           %strong.main-font.big ¿Estás listo?
           .large-paddin.medium.black.text-center.white-text
             También puedes acceder a este sitio sin conexión a internet
-    .top-space--2.orange.big-padding.white-text.full-height#contact
+    .top-space--2.contacto.big-padding.white-text.full-height#contact
       .row.middle-xs.full-height
         .col-xs-12
           .box
@@ -88,7 +91,7 @@
               .row.center-xs
                 .col-xs-12
                   .box
-                    %p.subtitle Contacto
+                    %strong.big.main-font Contacto
                 .col-xs-2.col-md-1.text-right
                   .box
                     -4.times do |i|

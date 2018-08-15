@@ -98,17 +98,28 @@ textarea {
 
 .video-container video {
   /* Make video to at least 100% wide and tall */
+  object-fit: fill;
   min-width: 100%;
   min-height: 100%;
   /* Setting width & height to auto prevents the browser from stretching or squishing the video */
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   /* Center the video */
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
+
+.merch {
+  display: grid;
+  margin-top: 120px;
+  background-color: rgba(237, 10, 38, 0.8);
+  color: #fff;
+  padding: 40px 0px; }
+
+.contacto {
+  background-color: rgba(237, 10, 38, 0.7); }
 
 .main-content {
   margin-bottom: 8em; }
@@ -172,6 +183,9 @@ textarea {
 ul.list-inline {
   margin-bottom: 0px; }
 
+#menu {
+  margin-top: 40px; }
+
 #menu-title {
   width: 300px;
   background-color: white;
@@ -188,13 +202,14 @@ ul.list-inline {
     transition: all 1s;
     position: relative; }
   #gallery .image {
-    padding: 20px;
+    background-color: #fff;
     width: 100%;
     height: 100%;
     display: inline-block;
     margin-right: -4px;
-    background-size: cover;
-    background-position: center; }
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat; }
 
 .container .card {
   margin-top: -200px;
@@ -424,7 +439,10 @@ ul.list-inline {
    ========================================================================== */
 @media only screen and (max-width: 600px) {
   .moto {
-    font-size: 12px; } }
+    font-size: 12px; }
+  .video-container video {
+    /* Make video to at least 100% wide and tall */
+    object-fit: cover; } }
 
 @media only screen and (max-width: 960px) {
   #responsive-nav {
@@ -452,8 +470,6 @@ ul.list-inline {
     margin-top: -100px; }
   .full-height, #gallery {
     height: 100%; }
-  #gallery .inner {
-    height: 80%; }
   #navigation {
     display: block; }
   .menu {
