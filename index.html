@@ -28,11 +28,13 @@ para una mejor experiencia
 <![endif]-->
 <div class="video-container">
 <!-- Width and height attrs are ok on media and images -->
-<video autoplay height="720" loop poster="/videos/images/fondo.jpg" width="1280">
+<video autoplay height="720" id="vid" loop poster="/videos/images/fondo.jpg" width="1280">
 <source src="/videos/mp4/promo.mp4" type="video/mp4">
-<source src="/videos/webm/promo.webm" type="video/webm">
 </video>
 </div>
+<script>
+    document.getElementById('vid').play();
+</script>
 <div class="row middle-xs full-height center-xs up relative">
 <nav class="fixed right top up main-nav" id="navigation">
 <ul class="list-inline">
@@ -53,7 +55,7 @@ para una mejor experiencia
 <div class="col-xs-12"></div>
 <div class="absolute medium red large-padding up--2" id="description">
 <div class="row">
-<div class="col-xs-8 col-sm-6 moto white-text main-font">El fútbol en México cambia para siempre</div>
+<div class="col-xs-8 col-sm-6 moto white-text">El fútbol en México cambia para siempre</div>
 <div class="fade col-sm-6 navigation col-xs-4">
 <nav class="small text-right main-nav" id="responsive-nav">
 <span class="glyphicon glyphicon-menu-hamburger menu white-text subtitle"></span>
@@ -209,7 +211,7 @@ También puedes acceder a este sitio sin conexión a internet
 <div class="row center-xs">
 <div class="col-xs-12">
 <div class="box">
-<strong class="big main-font">Contacto</strong>
+<strog class="big main-font">Contacto</strog>
 </div>
 </div>
 <div class="col-xs-2 col-md-1 text-right">

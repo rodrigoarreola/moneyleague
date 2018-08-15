@@ -1,3 +1,5 @@
+"use strict";
+
 // try{
 // 	navigator.serviceWorker.getRegistration().then((r)=>{r.unregister()
 // 	});
@@ -5,8 +7,6 @@
 // }catch(err){
 
 // }
-"use strict";
-
 if (navigator.serviceWorker) {
 	navigator.serviceWorker.register("/sw");
 }
@@ -42,12 +42,6 @@ if (navigator.serviceWorker) {
 			$("#responsive-nav ul").toggleClass("active");
 		});
 	});
-	function isOpen() {
-		var current_hour = new Date().getHours();
-		if (current_hour < 17 || current_hour > 23) {
-			$("#is_open .text").html("Cerrado ahora <br> Abierto de 5:00pm a 11:00pm");
-		}
-	}
 
 	function isInBottom() {
 		var $description = $("#description");

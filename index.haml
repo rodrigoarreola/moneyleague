@@ -25,12 +25,13 @@
       para una mejor experiencia
     ="<![endif]-->"
 
+
     .video-container
       / Width and height attrs are ok on media and images
-      %video{autoplay:true, width:"1280", height:"720",poster:"/videos/images/fondo.jpg",loop:true}
+      %video{autoplay:true,id:"vid", width:"1280", height:"720",poster:"/videos/images/fondo.jpg",loop:true}
         %source{type:"video/mp4",src:"/videos/mp4/promo.mp4"}
-        %source{type:"video/webm",src:"/videos/webm/promo.webm"}
-
+    :javascript
+        document.getElementById('vid').play();
     .row.middle-xs.full-height.center-xs.up.relative
       -menu = ["Evento","Tichas","Contacto","Cómo llegar"]
       %nav.fixed.right.top.up.main-nav#navigation
@@ -42,7 +43,7 @@
       
       .absolute.medium.red.large-padding.up--2#description
         .row
-          .col-xs-8.col-sm-6.moto.white-text.main-font El fútbol en México cambia para siempre
+          .col-xs-8.col-sm-6.moto.white-text El fútbol en México cambia para siempre
           .fade.col-sm-6.navigation.col-xs-4
             %nav.small.text-right.main-nav#responsive-nav
               %span.glyphicon.glyphicon-menu-hamburger.menu.white-text.subtitle
@@ -91,7 +92,7 @@
               .row.center-xs
                 .col-xs-12
                   .box
-                    %strong.big.main-font Contacto
+                    %strog.big.main-font Contacto
                 .col-xs-2.col-md-1.text-right
                   .box
                     -4.times do |i|

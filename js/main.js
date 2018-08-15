@@ -40,12 +40,6 @@ if(navigator.serviceWorker){
 		$(".menu").on("click",()=> {$("#responsive-nav ul").toggleClass("active")} )
 
 	});
-	function isOpen(){
-		const current_hour = (new Date()).getHours();
-		if(current_hour < 17 || current_hour > 23){
-			$("#is_open .text").html("Cerrado ahora <br> Abierto de 5:00pm a 11:00pm")
-		}
-	}
 
 	function isInBottom(){
 		const $description = $("#description");
