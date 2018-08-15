@@ -1,0 +1,121 @@
+-gallery_images = ["amigos.jpg","alv.jpg","fuck.jpg","fuck2.jpg","helvetica.jpg","merch.jpg", "noposwow.jpg"]
+!!!5
+%html{class:"no-js", lang:""}
+  %head
+    %meta{charset:"utf-8"}
+    %meta{:"http-equiv" => "x-ua-compatible", content:"ie=edge"}
+    %title Money League
+    %meta{name:"description", content:"Come rico y barato en el mejor rastaurante de la ciudad, servicio de primera. Los mejores tacos de la ciudad."}
+    %meta{content:"#{gallery_images.length}", :"data-name" => "image_counter"}
+    %meta{name:"viewport", content:"width=device-width, initial-scale=1"}
+    %link{rel:"apple-touch-icon", href:"apple-touch-icon.png"}
+    %link{rel:"stylesheet", href:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"}
+    %link{rel:"stylesheet", href:"css/normalize.css"}
+    %link{rel:"stylesheet", href:"css/main.css"}
+    %link{href:'https://fonts.googleapis.com/css?family=Dancing+Script', rel:'stylesheet', type:'text/css'}
+    %link{href:"https://cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css", rel:"stylesheet"}
+    %script{src:"js/vendor/modernizr-2.8.3.min.js"}
+  %body
+    ="<!--[if lt IE 8]>"
+    %p{class:"browserupgrade"}
+      Estás usando un navegador
+      %strong desactualizado.
+      Por favor
+      %a{href:"http://browsehappy.com/"}
+        actualiza tu navegador
+      para una mejor experiencia
+    ="<![endif]-->"
+
+    .video-container
+      / Width and height attrs are ok on media and images
+      %video{autoplay:true, width:"1280", height:"720",poster:"/videos/images/fondo.jpg",loop:true}
+        %source{type:"video/mp4",src:"/videos/mp4/promo.mp4"}
+        %source{type:"video/webm",src:"/videos/webm/promo.webm"}
+
+    .row.middle-xs.full-height.center-xs.up.relative
+      -menu = ["Evento","Tichas","Contacto","Cómo llegar"]
+      %nav.fixed.right.top.up.main-nav#navigation
+        %ul.list-inline
+          -menu.each do |item|
+            %li
+              %a.medium= item
+      .col-xs-12
+      
+      .absolute.medium.red.large-padding.up--2#description
+        .row
+          .col-xs-8.col-sm-6.moto.white-text El futbol en México cambia para siempre
+          .fade.col-sm-6.navigation.col-xs-4
+            %nav.small.text-right.main-nav#responsive-nav
+              %span.glyphicon.glyphicon-menu-hamburger.menu.white-text.subtitle
+              %ul.list-inline
+                -menu.each do |item|
+                  %li
+                    %a.white-text= item
+    .text-center.relative#menu
+      
+      -menu = [{title: "Lugar: Monterrey",image:"stadium"},{title: "Torneo de: 16 Equipos",image:"playoff"},{title: "Inegrantes por equipo: 8 - Mixto", image:"barrier"},{title: "Tichas: ¡16 Modelos NUEVOS!", image:"shirt"},{title: "Fecha: Sábado 8 de Septiembre", image:"schedule"},{title: "Modalidad: El primer equipo en marcar dos goles avanza", image:"match"},{title: "Premio: $20,000 en efectivo",image:"trophy"},{title: "Costo: $350 por jugador",image:"soccer-player"}]
+      .row.grid
+        -menu.each do |i|
+          .col-md-4.col-lg-3.col-sm-6.col-xs-12.item-image.center{style:"background-image:url(/imgs/icons/#{i[:image]}.png)"}
+            .screen
+              .row.full-height.middle-xs
+                .col-xs-12
+                  .box
+                    %h3.main-font.white-text.subtitle= i[:title]
+    #gallery
+      .inner
+        -gallery_images.each do |image|
+          .image{style:"background-image:url(/imgs/tichas/#{image})"}
+    .container
+      .card.white.relative.blue-text.text-center
+        %h2.medium.slim.montse-font
+          Si eres bueno jugando futbol es hora de que se te pague por eso
+          %br
+          %br
+          %strong.main-font.big Somos 
+          %strong.big.main-font AMIGOSCOOL 
+          
+          %h2.medium.slim.montse-font
+            4 partidos y 8 goles es lo que te separa de $20,000
+          %strong.main-font.big ¿Estás listo?
+          .large-paddin.medium.black.text-center.white-text
+            También puedes acceder a este sitio sin conexión a internet
+    .top-space--2.orange.big-padding.white-text.full-height#contact
+      .row.middle-xs.full-height
+        .col-xs-12
+          .box
+            %form.step-form#my-form{action:"https://formspree.io/rodrigoarreola@yopmail.com",method:"POST"}
+              .row.center-xs
+                .col-xs-12
+                  .box
+                    %p.subtitle Contacto
+                .col-xs-2.col-md-1.text-right
+                  .box
+                    -4.times do |i|
+                      .path-step{class:"#{'active' if i == 0}",data:{position:i+1}}
+                .col-md-5
+                  .box
+                    .fieldset.step.active
+                      %input.input{type:"email",name:"email",placeholder:"Coloca tu correo electrónico",required:true}
+                    .fieldset.step
+                      %input.input{type:"text",name:"nombre",placeholder:"¿Cuál es tu nombre?",required:true}
+                    .fieldset.step
+                      %input.input{type:"text",name:"edades",placeholder:"Escribe las edades de los integrantes de tu equipo",required:true}
+                    .fieldset.step
+                      %input.input{name:"contacto",placeholder:"¿A qué número te marcamos?",required:true}
+                      %p.small#info.text-left
+                
+
+    #location
+      #map
+      #messages.black.large-padding.white-text.text-center.medium
+    %script{src:"https://code.jquery.com/jquery-1.12.0.min.js"}
+    %script
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')
+    %script{src:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"}
+    %script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyAZw-hILO285jF31gCS_fzjU3e1pWE4etw&libraries=places"}
+    %script{src:"dist/user_location.js"}
+    %script{src:"dist/maps.js"}
+    %script{src:"dist/path.js"}
+    %script{src:"dist/main.js"}
+    
