@@ -5,9 +5,10 @@
     %meta{charset:"utf-8"}
     %meta{:"http-equiv" => "x-ua-compatible", content:"ie=edge"}
     %title Money League
-    %meta{name:"description", content:"Money League. 8 Equipos, $20,000, un día ¿estás listo?"}
+    %meta{name:"description", content:"Money League 🔥. 8 Equipos, $20,000, un día ¿estás listo? By. AMIGOS COOL"}
     %meta{content:"#{gallery_images.length}", :"data-name" => "image_counter"}
     %meta{name:"viewport", content:"width=device-width, initial-scale=1"}
+    %link{rel:"icon", type:"image/x-icon", href:"imgs/icons/favicon.ico"}
     %link{rel:"apple-touch-icon", href:"apple-touch-icon.png"}
     %link{rel:"stylesheet", href:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"}
     %link{rel:"stylesheet", href:"css/normalize.css"}
@@ -26,12 +27,13 @@
       para una mejor experiencia
     ="<![endif]-->"
 
+
     .video-container
       / Width and height attrs are ok on media and images
-      %video{autoplay:true, width:"1280", height:"720",poster:"/videos/images/fondo.jpg",loop:true}
+      %video{autoplay:true,id:"vid", width:"1280", height:"720",poster:"/videos/images/fondo.jpg",loop:true}
         %source{type:"video/mp4",src:"/videos/mp4/promo.mp4"}
-        %source{type:"video/webm",src:"/videos/webm/promo.webm"}
-
+    :javascript
+        document.getElementById('vid').play();
     .row.middle-xs.full-height.center-xs.up.relative
       -menu = ["Evento","Tichas","Contacto","Cómo llegar"]
       %nav.fixed.right.top.up.main-nav#navigation
@@ -43,7 +45,7 @@
       
       .absolute.medium.red.large-padding.up--2#description
         .row
-          .col-xs-8.col-sm-6.moto.white-text El futbol en México cambia para siempre
+          .col-xs-8.col-sm-6.moto.white-text El fútbol en México cambia para siempre
           .fade.col-sm-6.navigation.col-xs-4
             %nav.small.text-right.main-nav#responsive-nav
               %span.glyphicon.glyphicon-menu-hamburger.menu.white-text.subtitle
@@ -88,7 +90,7 @@
               .row.center-xs
                 .col-xs-12
                   .box
-                    %p.subtitle Contacto
+                    %strog.big.main-font Contacto
                 .col-xs-2.col-md-1.text-right
                   .box
                     -4.times do |i|

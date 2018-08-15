@@ -49,8 +49,8 @@ var api_key = "AIzaSyD99SvEg7_YttMSU01CO10mR_kZefYZnKA";
 	  			const duration = element.duration.text;
 
 	  			writeMessage(`
-	  				Estás a ${duration} de una noche inolvidable en 
-	  				<span class='medium lobster'>Restaurante Facilito</span>
+	  				Estás a ${duration} del mejor torneo de Fútbol solo con  
+	  				<span class='medium lobster'>AMIGOS COOL</span>
 	  			`);
 		  	}
 		  });
